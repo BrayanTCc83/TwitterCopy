@@ -1,0 +1,31 @@
+@media ( min-width : 450px ) and ( max-width : 1050px ){
+    #root>div{
+        grid-template: 8% 92% / auto 70px 70% auto;
+        grid-template-areas: 
+            ". header header header ."
+            ". navigation main news .";
+    }
+    header{
+        grid-template-columns: 70px 70%;
+        grid-template-areas: 
+            "iconContainer sectionTitle searchContainer";
+    }
+    #navigation{
+        grid-template-rows: 70% 20% 10%;
+        grid-template-areas: 
+            "nav"
+            "tweetButton"
+            "userInfo";
+    }
+    main{
+        grid-template-rows: 20% 80%;
+        grid-template-areas: 
+            "userTweet"
+            "posts";
+    }
+    #news{
+        width: 0;
+        height: 0;
+        display: none;
+    }
+}

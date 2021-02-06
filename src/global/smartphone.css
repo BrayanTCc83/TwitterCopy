@@ -1,0 +1,118 @@
+@media ( max-width : 450px ){
+    #root>div{
+        grid-template: 8% 84% 8% / 100%;
+        grid-template-areas: 
+            "header"
+            "main"
+            "directAccess";
+    }
+    header{
+        grid-template-columns: 100%;
+        grid-template-areas: "sectionTitle";
+    }
+    #sectionTitle{
+        line-height: 50px;
+        grid-template-columns: 30px calc(100% - 30px);
+    }
+    #sectionTitle span{
+        margin: 0 10px;
+    }
+    #sectionTitle .userIcon{
+        display: block !important;
+    }
+    #searchContainer, #iconContainer{
+        display: none;
+    }
+    #navigation #tweetButton{
+        display: none;
+    }
+    #userTweet{
+        display: none !important;
+    }
+    #navigation{
+        position: absolute !important;
+        overflow: hidden !important;
+        width: 0 !important;
+    }
+    #navigation.show{
+        height: 100vh !important;
+        width: 70% !important;
+        display: grid;
+        grid-template: 8% 20% max-content / 100% !important;
+        grid-template-areas: 
+            "acountInfo"
+            "userInfo"
+            "nav" !important;
+        overflow: auto !important;
+        z-index: 2;
+        padding: 0;
+    }
+    .show::after{
+        grid-area: acountInfo;
+        content: 'Account Info';
+        font-size: 1.3em;
+        font-weight: bold;
+        padding: 10px 10px 0 10px;
+        border-bottom: 1px solid var(--light-gray-color);
+    }
+    .show nav{
+        width: 100%;
+        grid-template-columns: 100%;
+        justify-content: none !important;
+        justify-self: none !important;
+    }
+    .show .cross{
+        display: block !important; 
+    }
+    .userInfo{
+        display: grid;
+        grid-template: 1fr 1fr / 100% ;
+    }
+    .userInfo p{
+        display: grid;
+    }
+    nav .listElement{
+        width: 100%;
+        justify-content: none !important;
+        grid-template-columns: 20% 80% !important;
+        border-radius: 0 !important;
+        padding: 0 !important; 
+    }
+    nav .listElement>span{
+        display: block !important;
+        line-height: 30px;
+    }
+    #news{
+        display: none;
+    }
+
+    #directAccess{
+        display: flex !important;
+        grid-area: directAccess;
+        padding: 10px 0;
+        justify-content: space-evenly;
+        border-top: 2px solid var(--light-gray-color);
+    }
+    #directAccess .mascara{
+        background-color: var(--main-color);
+    }
+    .homeSelector, .notifySelector, .messageSelector{
+        display: none !important;
+    }
+    #buttonContainer{
+        display: block !important;
+        position: absolute;
+        top: calc(92% - 60px);
+        left: calc(100% - 60px);
+        width: 50px;
+        height: 50px;
+    }
+    #buttonContainer #tweetButton{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        margin: 0;
+        padding: 0;
+        box-shadow: 3px 3px 3px var(--white-color);
+    }
+}

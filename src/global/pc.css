@@ -1,0 +1,87 @@
+@media ( min-width : 1050px ){
+    #root>div{
+        grid-template: 8% 92% / auto 250px 600px 300px auto;
+        grid-template-areas: 
+            ". header header header ."
+            ". navigation main news .";
+    }
+    header{
+        grid-template-columns: 250px 600px 300px;
+        grid-template-areas: 
+            "iconContainer sectionTitle searchContainer";
+    }
+    #searchContainer{
+        display: block !important;
+        width: calc(100% - 2px);
+        grid-area: searchContainer;
+        border: 1px solid var(--light-gray-color);
+    }
+    #navigation{
+        grid-template-rows: 70% 20% 10%;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+            "nav"
+            "tweetButton"
+            "userInfo";
+        justify-content: none !important;
+    }
+    #navigation>nav{
+        grid-template-columns: 100%;
+        justify-self: none !important;
+        justify-content: none !important;
+    }
+    .listElement{
+        margin: 5px 0;
+        width: max-content !important;
+        grid-template-columns: 50px max-content !important;
+        padding: 0 20px 0 15px;
+    }
+    .listElement> span{
+        grid-column: 2;
+        display: block !important;
+        line-height: 30px;
+    }
+    #tweetButton{
+        margin: 4% !important;
+        width: 90% !important;
+        height: 40px !important;
+        border-radius: 20px !important;
+    }
+    #tweetButton::after{
+        text-align: center;
+        background-color: transparent !important;
+        content: 'Tweet' !important;
+        -webkit-mask: none !important;
+    }
+    .userInfo{
+        grid-template: 1fr / 50px calc(100% - 60px) ;
+    }
+    .userInfo>p{
+        display: grid !important;
+    }
+    .listElement>span{
+        display: block;
+    }
+    main{
+        grid-template-rows: 20% 80%;
+        grid-template-areas: 
+            "userTweet"
+            "posts";
+    }
+    #news{
+        grid-template-rows: repeat(2, 60%);
+        grid-gap: 15px;
+        display: grid;
+        grid-template-rows: repeat(2, 50%);
+        overflow: auto;
+        padding: 20px;
+        grid-area: news;
+        background-color: var(--white-color);
+        border: 1px solid var(--light-gray-color);
+    }
+    #onfire, #others{
+        height: 100%;
+        background-color: var(--second-color);
+        border-radius: 10px;
+    }
+}

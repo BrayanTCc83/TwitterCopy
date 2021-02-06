@@ -1,0 +1,61 @@
+@font-face{
+    font-family: 'Roboto';
+    src: url(../assets/RobotoCondensed-Regular.ttf);
+}
+#root>div{
+    background-color: var(--white-color);
+}
+#root{
+    --default-color: #1994F3;
+    --main-color: #1994F3;
+    --second-color: #B6DFFF;
+    --third-color:#69b7f3;
+    --gray-color: #707070;
+    --light-gray-color: #EAEAEA;
+    --black-color: #000000;
+    --white-color: #ffffff;
+    --red-color: #f73e4d;
+    --green-color: #1f9939;
+    --shadow-color: #00000055;
+    font-family: 'Roboto';
+}
+#root.Schema1{
+    --main-color:#eba716 !important;
+    --second-color:#ffd986 !important;
+    --third-color:#ddc34d;
+}
+#root.Schema2{
+    --main-color:#e02261 !important;
+    --second-color:#ffa0a8 !important;
+    --third-color:#f369a9;
+}
+#root.Schema3{
+    --main-color:#5c20cc !important;
+    --second-color:#b48bff !important;
+    --third-color:#8269f3;
+}
+#root.Schema4{
+    --main-color:#ee2e20 !important;
+    --second-color:#ff938b !important;
+    --third-color:#f36969;
+}
+#root.Schema5{
+    --main-color:#0e9e21 !important;
+    --second-color:#74ff87 !important;
+    --third-color:#22d357;
+}
+#root.backDim{
+    --gray-color: #ffffff;
+    --light-gray-color: #bdbdbd;
+    --black-color: #cccccc;
+    --white-color: #1d183b;
+}
+#root.backBlack{
+    --gray-color: #EAEAEA;
+    --light-gray-color: #707070;
+    --black-color: #ffffff;
+    --white-color: #1a1a1a;
+}
+*::-webkit-scrollbar{
+    display: none;
+}

@@ -1,0 +1,69 @@
+form{
+    font-family: 'Roboto';
+}
+input[type='submit'], input[type='button'], button, #tweetButton{
+    background-color: var(--main-color);
+    width: 90%;
+    margin: 0 5%;
+    height: 35px;
+    border: 2px solid var(--main-color);
+    border-radius: 20px;
+    font-size: 1.05em;
+    color: var(--white-color);
+}
+form#searchForm{
+    height: 100%;
+    display: grid;
+    grid-template: 1fr / 40px calc(100% - 25px ) ;
+    padding: 10px;
+}
+input[type='search']{
+    position: relative;
+    grid-row: 1;
+    grid-column: 1 / 3;
+    font-size: 1.2em;
+    padding: 0 0 0 40px;
+    width: calc(100% - 15px);
+    outline: none;
+    border-radius: 25px;
+    border: 2px solid var(--gray-color);
+    height: calc(100% - 20px);
+    background-color: var(--light-gray-color);
+    color: var(--gray-color);
+    z-index: 1;
+}
+#searchForm #searchIcon{
+    position: relative;
+    width: 100%;
+    height: 40%;
+    margin: 20% 0;
+    grid-row: 1;
+    grid-column: 1;
+    z-index: 2;
+    background-color: var(--gray-color);
+}
+
+form#userTweet{
+    display: grid;
+    padding: 5px;
+    grid-template: 2fr 1fr / 1fr 4fr 1fr;
+    border-bottom: 10px solid var(--light-gray-color);
+}
+.tweetContent{
+    grid-column: 2 / 4;
+    font-size: 1.2em;
+    resize: none;
+    border: none;
+    overflow: auto;
+    outline: none;
+}
+form#userTweet input[type='submit']{
+    grid-column: 3;
+}
+form#userTweet .addElement{
+    padding: 5px;
+    display: grid;
+    grid-column: 2;
+    gap: 5px;
+    grid-template-columns: repeat(12, 1fr);
+}

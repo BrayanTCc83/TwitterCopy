@@ -1,0 +1,303 @@
+.listVoid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40px calc(100% - 50px);
+    text-decoration: none;
+    padding: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.listElement{
+    width: max-content;
+    border-radius: 25px;
+    display: grid;
+    width: 50px;
+    height: 50px;
+    grid-template-columns: 50px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.listElement:hover{
+    background-color: var(--second-color);
+}
+.listElement:hover>span, .listElement.selected>span, .listVoid:hover>span{
+    color: var(--main-color);
+}
+.listIconContainer{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+.mascara{
+    width: 25px;
+    height: 25px;
+    background-color: var(--black-color);
+    cursor: pointer;
+}
+.listElement:hover .mascara, .selected .mascara{
+    background-color: var(--main-color);
+}
+.listElement:hover #list, .selected #list, .listElement:hover #more, .selected #more{
+    border-color: var(--main-color);
+}
+.listElement>span{
+    display: none;
+    color: var(--black-color);
+    margin: 10px 0;
+}
+#homeIcon{
+    -webkit-mask: url(../../assets/home-solid.svg) center no-repeat;
+}
+#exploreIcon{
+    -webkit-mask: url(../../assets/hashtag-solid.svg) center no-repeat;
+}
+#notifyIcon{
+    -webkit-mask: url(../../assets/bell-regular.svg) center no-repeat;
+}
+#messageIcon{
+    -webkit-mask: url(../../assets/envelope-regular.svg) center no-repeat;
+}   
+#bookmarkIcon{
+    -webkit-mask: url(../../assets/bookmark-regular.svg) center no-repeat;
+}
+#searchIcon{
+    background-color: var(--black-color);
+    -webkit-mask: url(../../assets/search-solid.svg) center no-repeat;
+}
+#list{
+    width: 10px;
+    height: 15px;
+    border-radius: 5px;
+    border: 2px solid var(--black-color);
+    display: grid;
+    padding: 5px;
+}
+#listIcon{
+    width: 100%;
+    height: 100%;
+    -webkit-mask: url(../../assets/bars-solid.svg) center no-repeat;
+}
+#profileIcon{
+    -webkit-mask: url(../../assets/user-regular.svg) center no-repeat;
+}
+#more{
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    border: 2px solid var(--black-color);
+    display: grid;
+    padding: 5px;
+}
+#moreIcon{
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(90deg);
+    -webkit-mask: url(../../assets/ellipsis-v-solid.svg) center no-repeat;
+}
+
+.listElement:hover>#more,
+    .listElement:hover>#list,
+    .listElement.listElement.selected>#more,
+    .listElement.listElement.selected>#list{
+    border-color: var(--main-color);
+}
+.listElement:hover>#more>#moreIcon,
+    .listElement:hover>#list>#listIcon,
+    .listElement.listElement.selected>#more>#moreIcon,
+    .listElement.listElement.selected>#list,
+    .listElement.listElement.selected>#list>#listIcon{
+    background-color: var(--main-color);
+}
+
+.userInfo{
+    position: relative;
+    display: grid;
+    padding: 5px;
+    grid-gap: 10px;
+}
+
+.userIcon{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--gray-color);
+    padding: 0;
+}
+.userIcon::after{
+    position:absolute;
+    content:'';
+    width: 54px;
+    height: 54px;
+    top: -2px;
+    left: -2px;
+    background-color: var(--light-gray-color);
+    background-size: cover;
+    -webkit-mask: url(../../assets/user-circle-solid.svg) center no-repeat;
+}
+.userInfo>p{
+    height: 100%;
+    margin: 0;
+    display: none;
+    grid-template-rows: repeat(2, 50%);
+}
+.userInfo>p span{
+    color: var(--gray-color);
+}
+
+#iconContainer{
+    width: 100%;
+    height: 100%;
+    display:grid;
+    grid-template: 100% / 1fr 4fr ;
+}
+#twitterIcon{
+    border-radius: 100%;
+    top: 5px;
+    left: 5px;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    background-color: transparent;
+}
+#twitterIcon:hover{
+    background-color: var(--light-gray-color);
+}
+#twitterIcon::after{
+    margin: 5px 0;
+    position: absolute;
+    content: '';
+    width: 80%;
+    height: 80%;
+    background-color: var(--default-color);
+    -webkit-mask: url(../../assets/twitter-brands.svg) center no-repeat;
+}
+#imageIcon{
+    background-color: var(--main-color);
+    -webkit-mask: url(../../assets/image-regular.svg) center no-repeat;
+}
+#gifIcon{
+    width: calc(100% - 6px);
+    height: 70%;
+    border-radius: 5px;
+    border: 3px solid var(--main-color);
+    background-color: transparent;
+    text-align: center;
+    font-weight: bold;
+    font-style: normal;
+    color: var(--main-color);
+}
+#graphicIcon{
+    background-color: var(--main-color);
+    -webkit-mask: url(../../assets/chart-bar-regular.svg) center no-repeat;
+}
+#laughIcon{
+    background-color: var(--main-color);
+    -webkit-mask: url(../../assets/laugh-regular.svg) center no-repeat;
+}
+#calendarIcon{
+    background-color: var(--main-color);
+    -webkit-mask: url(../../assets/calendar-alt-regular.svg) center no-repeat;
+}
+
+
+
+
+.commentIcon{
+    background-color: var(--gray-color);
+    -webkit-mask: url(../../assets/comment-regular.svg) center no-repeat;
+}
+.retweetIcon{
+    background-color: var(--gray-color);
+    -webkit-mask: url(../../assets/retweet-solid.svg) center no-repeat;
+}
+.loveIcon{
+    background-color: var(--gray-color);
+    -webkit-mask: url(../../assets/heart-regular.svg) center no-repeat;
+}
+.uploadIcon{
+    background-color: var(--gray-color);
+    -webkit-mask: url(../../assets/upload-solid.svg) center no-repeat;
+}
+
+.commentIcon:hover{
+    background-color: var(--main-color);
+}
+.commentIcon:hover+span{
+    color: var(--main-color);
+}
+.retweetIcon:hover{
+    background-color: var(--green-color);
+}
+.retweetIcon:hover+span{
+    color: var(--green-color);
+}
+.loveIcon:hover{
+    background-color: var(--red-color);
+}
+.loveIcon:hover+span{
+    color: var(--red-color);
+}
+
+
+.cross{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    left: calc(100% - 30px);
+    transform: rotate(45deg);
+    background-color: var(--black-color);
+    -webkit-mask: url(../../assets/plus-solid.svg) center no-repeat;
+}
+
+.topics{
+    -webkit-mask: url(../../assets/comment-dots-regular.svg) center no-repeat;
+}
+.moments{
+    -webkit-mask: url(../../assets/bolt-solid.svg) center no-repeat;
+}
+.ads{
+    -webkit-mask: url(../../assets/external-link-alt-solid.svg) center no-repeat;
+}
+.analitics{
+    width: 4px;
+    margin-left: 10px;
+    position: relative;
+}
+.analitics::after, .analitics::before{
+    position: absolute;
+    content: '';
+    width: 4px;
+    background-color: var(--black-color);
+    height: 20px;
+    top: 5px;
+}
+.analitics::after{
+    left: -8px;
+}
+.analitics::before{
+    left: 8px;
+}
+.settings{
+    -webkit-mask: url(../../assets/cog-solid.svg) center no-repeat;
+}
+.help{
+    -webkit-mask: url(../../assets/question-solid.svg) center no-repeat;
+}
+.display{
+    -webkit-mask: url(../../assets/quidditch-solid.svg) center no-repeat;
+}
+.shotcuts{
+    -webkit-mask: url(../../assets/universal-access-solid.svg) center no-repeat;
+}
