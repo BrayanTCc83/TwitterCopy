@@ -67,3 +67,9 @@ form#userTweet .addElement{
     gap: 5px;
     grid-template-columns: repeat(12, 1fr);
 }
+textarea{
+    border: none;
+    background-color: var(--white-color);
+    font-family: 'Roboto';
+    font-size: 16px !important;
+}

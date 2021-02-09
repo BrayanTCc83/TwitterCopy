@@ -1,28 +1,11 @@
 import React, {useState} from 'react'
 import useLocalStorage from "../../hooks/localstorage"
-const displayConfiguration=()=>{
-    const [localDisplayConfiguation,setDisplayConfiguration]=useLocalStorage("TwitterAppDisplayConfiguration",{color:"",background:"",font:""})
-    const setColors=(color)=>{
-        let root=document.getElementById("root")
-        root.classList.forEach(async(classItem)=>{
-            if(classItem.substr(0,6)=="Schema"){
-                await root.classList.remove(classItem)
-            }
-        })
-        root.classList.add(color)
-    }
-    const setBackground=(background)=>{
-        let root=document.getElementById("root")
-        root.classList.forEach(async(classItem)=>{
-            if(classItem=="backWhite"||classItem=="backDim"||classItem=="backBlack"){
-                await root.classList.remove(classItem)
-            }
-        })
-        root.classList.add(background)
-    }
-    const setFontSize=(font)=>{
-        let root=document.getElementById("root")
-        root.style.fontSize=`${font}px`
+const DisplayConfiguration=({localDisplayConfiguation, setDisplayConfiguration, toggleDisplayConfiguration, updateDisplay})=>{
+    const setValue=(e)=>{
+        let localDisplayConfigCopy=localDisplayConfiguation
+        localDisplayConfigCopy[e.target.name]=e.target.value
+        setDisplayConfiguration(localDisplayConfigCopy)
+        console.log(localDisplayConfiguation)
     }
     return(
         <div id="displayConfiguration">
@@ -40,23 +23,23 @@ const displayConfiguration=()=>{
                 <div className="fontConfiguration">
                     <div className="setFont">
                         <p>Aa</p>
-                        <div className="scale check" onClick={()=>setFontSize(12)} ></div>
-                        <div className="scale check" onClick={()=>setFontSize(14)} ></div>
-                        <div className="scale" onClick={()=>setFontSize(16)} ></div>
-                        <div className="scale" onClick={()=>setFontSize(18)} ></div>
-                        <div className="scale" onClick={()=>setFontSize(19)} ></div>
+                        <button name="font" value="12" className="scale check" onClick={setValue} ></button>
+                        <button name="font" value="14" className="scale check" onClick={setValue} ></button>
+                        <button name="font" value="16" className="scale" onClick={setValue} ></button>
+                        <button name="font" value="18" className="scale" onClick={setValue} ></button>
+                        <button name="font" value="19" className="scale" onClick={setValue} ></button>
                         <p>Aa</p>
                     </div>
                 </div>
                 <h4>Color</h4>
                 <div className="colorSelector">
                     <div className="colors">
-                        <div className="color select" onClick={()=>setColors('Schema0')} ></div>
-                        <div className="color" onClick={()=>setColors('Schema1')} ></div>
-                        <div className="color" onClick={()=>setColors('Schema2')} ></div>
-                        <div className="color" onClick={()=>setColors('Schema3')} ></div>
-                        <div className="color" onClick={()=>setColors('Schema4')} ></div>
-                        <div className="color" onClick={()=>setColors('Schema5')} ></div>
+                        <button name="color" value="Schema0" className="color select" onClick={setValue} ></button>
+                        <button name="color" value="Schema1" className="color" onClick={setValue} ></button>
+                        <button name="color" value="Schema2" className="color" onClick={setValue} ></button>
+                        <button name="color" value="Schema3" className="color" onClick={setValue} ></button>
+                        <button name="color" value="Schema4" className="color" onClick={setValue} ></button>
+                        <button name="color" value="Schema5" className="color" onClick={setValue} ></button>
                     </div>
                     <div className="icons">
                         <div className="loveIcon"></div>
@@ -69,19 +52,22 @@ const displayConfiguration=()=>{
                 </div>
                 <h4>Background</h4>
                 <div className="backgroundSelector">
-                    <div className="backColor select" onClick={()=>setBackground('backWhite')} >
-                        <span>Default</span>
-                    </div>
-                    <div className="backColor" onClick={()=>setBackground('backDim')} >
-                        <span>Dim</span>
-                    </div>
-                    <div className="backColor" onClick={()=>setBackground('backBlack')} >
-                        <span>Lightsout</span>
-                    </div>
+                    <button name="background" value="backWhite" className="backColor select" onClick={setValue} >
+                        Default
+                    </button>
+                    <button name="background" value="backDim" className="backColor" onClick={setValue} >
+                        Dim
+                    </button>
+                    <button name="background" value="backBlack" className="backColor" onClick={setValue} >
+                        Lightsout
+                    </button>
                 </div>
-                <button>Done</button>
+                <button onClick={()=>{
+                    updateDisplay()
+                    toggleDisplayConfiguration(false)
+                }} >Done</button>
             </div>
         </div>
     )
 }
-export default displayConfiguration
+export default DisplayConfiguration

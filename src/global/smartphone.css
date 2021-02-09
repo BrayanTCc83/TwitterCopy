@@ -6,10 +6,6 @@
             "main"
             "directAccess";
     }
-    header{
-        grid-template-columns: 100%;
-        grid-template-areas: "sectionTitle";
-    }
     #sectionTitle{
         line-height: 50px;
         grid-template-columns: 30px calc(100% - 30px);

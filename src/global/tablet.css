@@ -5,11 +5,6 @@
             ". header header header ."
             ". navigation main news .";
     }
-    header{
-        grid-template-columns: 70px 70%;
-        grid-template-areas: 
-            "iconContainer sectionTitle searchContainer";
-    }
     #navigation{
         grid-template-rows: 70% 20% 10%;
         grid-template-areas: 

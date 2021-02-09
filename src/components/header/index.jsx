@@ -1,5 +1,9 @@
 import React from 'react'
-const Header=({pageTitle})=>{
+import { useGlobalContext } from "../../context/globalContext"
+import "./index.css"
+const Header=()=>{
+    let pageTitle=useGlobalContext().currentPath.split('/')[3]
+    pageTitle=pageTitle.replace(pageTitle.charAt(0),pageTitle.charAt(0).toUpperCase())
     const toggleSection=()=>{
         let section=document.getElementById("navigation")
         section.classList.toggle("show")

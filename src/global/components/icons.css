@@ -6,6 +6,7 @@
     padding: 5px;
     vertical-align: middle;
     cursor: pointer;
+    color: var(--black-color);
 }
 .listElement{
     width: max-content;
@@ -111,6 +112,7 @@
     .listElement.listElement.selected>#more>#moreIcon,
     .listElement.listElement.selected>#list,
     .listElement.listElement.selected>#list>#listIcon{
+    color: var(--black-color);
     background-color: var(--main-color);
 }
 

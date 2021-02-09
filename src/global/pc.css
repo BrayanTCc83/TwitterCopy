@@ -5,11 +5,6 @@
             ". header header header ."
             ". navigation main news .";
     }
-    header{
-        grid-template-columns: 250px 600px 300px;
-        grid-template-areas: 
-            "iconContainer sectionTitle searchContainer";
-    }
     #searchContainer{
         display: block !important;
         width: calc(100% - 2px);

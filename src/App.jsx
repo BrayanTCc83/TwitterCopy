@@ -2,20 +2,26 @@ import React, { useState, Fragment } from 'react'
 import ReactDOM from 'react-dom'
 
 //Routers and routes
-import { Link, BrowserRouter, Switch } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import MainRouter from "./routes/mainRouter"
+import routes from "./routes/routes"
+
+//Context
+import { GlobalProvider } from "./context/globalContext"
 
 //Styles
-import './App.css';
+import './global/index.css';
 
 const App=()=>{
     return (
-        <BrowserRouter>
-            <Switch>
-                <MainRouter/>
-            </Switch>
-        </BrowserRouter>
+        <Switch>
+            <Route path={routes.pages} >
+                <MainRouter/> 
+            </Route>
+        </Switch>
     )
 }
 
-export default App;
+export default ()=><GlobalProvider>
+    <App/>
+</GlobalProvider>

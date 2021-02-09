@@ -1,0 +1,47 @@
+/*Distribucion de elementos del header*/
+header{
+    color: var(--black-color);
+    margin: 0;
+    grid-area: header;
+    background-color: var(--white-color);
+    display: grid;
+}
+#iconContainer{
+    width: calc(100% - 2px);
+    grid-area: iconContainer;
+    border: 1px solid var(--light-gray-color);
+}
+#sectionTitle{
+    border-top: 1px solid var(--light-gray-color);
+    font-size: 1.2em;
+    grid-area: sectionTitle;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    align-content: center;
+    padding: 0 10px;
+    font-weight: bold;
+}
+#searchContainer{
+    display: none;
+}
+@media ( min-width : 1050px ){
+    header{
+        grid-template-columns: 250px 600px 300px;
+        grid-template-areas: 
+            "iconContainer sectionTitle searchContainer";
+    }
+}
+@media ( max-width : 450px ){
+    header{
+        grid-template-columns: 100%;
+        grid-template-areas: "sectionTitle";
+    }
+}
+@media ( min-width : 450px ) and ( max-width : 1050px ){
+    header{
+        grid-template-columns: 70px 70%;
+        grid-template-areas: 
+            "iconContainer sectionTitle searchContainer";
+    }
+}
