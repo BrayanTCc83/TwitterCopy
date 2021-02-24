@@ -1,5 +1,5 @@
 /*Distribucion de elementos del header*/
-header{
+#pages>header{
     color: var(--black-color);
     margin: 0;
     grid-area: header;
@@ -26,20 +26,20 @@ header{
     display: none;
 }
 @media ( min-width : 1050px ){
-    header{
+    #pages>header{
         grid-template-columns: 250px 600px 300px;
         grid-template-areas: 
             "iconContainer sectionTitle searchContainer";
     }
 }
 @media ( max-width : 450px ){
-    header{
+    #pages>header{
         grid-template-columns: 100%;
         grid-template-areas: "sectionTitle";
     }
 }
 @media ( min-width : 450px ) and ( max-width : 1050px ){
-    header{
+    #pages>header{
         grid-template-columns: 70px 70%;
         grid-template-areas: 
             "iconContainer sectionTitle searchContainer";

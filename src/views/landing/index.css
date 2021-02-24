@@ -1,0 +1,44 @@
+@import "../../global/variables.css";
+div#landing{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template: 90% 10% / 55% 45%;
+    grid-template-areas: 
+        "sectionImage infoMain"
+        "infoFotter infoFotter";
+}
+div#landing #sec{
+    grid-area: sectionImage !important;
+    background-color: var(--main-color) !important;
+}
+div#landing>main{
+    grid-area: infoMain;
+    background-color: var(--white-color);
+}
+div#landing>footer{
+    grid-area: infoFotter;
+    background-color: var(--light-gray-color);
+}
+h1.landingImpactText{
+    text-align: left;
+    font-size: 5em;
+    font-stretch: expanded;
+}
+#landing>.mainIcon{
+    margin: 15% !important;
+    width: 70% !important;
+    height: 70% !important;
+}
+#landing>.mainIcon:hover{
+    background-color: transparent !important;
+}
+#landing>.mainIcon::after{
+    background-color: var(--white-color) !important;
+}
+#landing button{
+    margin-top: 20px;
+}
+h1,h2{
+    margin: 30px 10px;
+}

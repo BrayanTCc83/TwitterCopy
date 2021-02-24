@@ -5,7 +5,7 @@
 @import "./components/extras.css";
 @import "./components/forms.css";
 @import "./components/icons.css";
-html,body,#root>div{
+html,body,#root>div#pages{
     width: 100%;
     height: 100vh;
     margin: 0;
@@ -57,7 +57,7 @@ html,body,#root>div{
     justify-self: center;
 }
 /*Distribucion de elementos del main*/
-main{
+#pages>main{
     display: grid;
     grid-area: main;
     background-color: var(--white-color);

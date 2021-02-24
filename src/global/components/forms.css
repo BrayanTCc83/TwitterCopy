@@ -10,6 +10,11 @@ input[type='submit'], input[type='button'], button, #tweetButton{
     border-radius: 20px;
     font-size: 1.05em;
     color: var(--white-color);
+    cursor: pointer;
+}
+input[type='submit'].style2, input[type='button'].style2, button.style2{
+    background-color: var(--white-color) !important;
+    color:var(--main-color) !important;
 }
 form#searchForm{
     height: 100%;
@@ -72,4 +77,61 @@ textarea{
     background-color: var(--white-color);
     font-family: 'Roboto';
     font-size: 16px !important;
+}
+.dropdownContainer{
+    height: auto;
+    position: relative;
+    text-align: left;
+    cursor: pointer;
+}
+.dropdownContainer::after, .dropdownContainer::before{
+    position: absolute;
+    content:'';
+    background-color: var(--gray-color);
+    width: 3px;
+    height: 15px;
+    top: calc(50% - 5px);
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.dropdownContainer::after{
+    transform: rotate(45deg);
+    left: 90%;
+}
+.dropdownContainer::before{
+    transform: rotate(-45deg);
+    left: calc(90% - 9px);
+}
+.dropdownContainer:hover .option{
+    width: 100%;
+    height: 18px;
+    padding: 5px 0;
+}
+.dropdownContainer:hover::after,.dropdownContainer:hover::before{
+    background-color: var(--main-color);
+}
+.dropdownContainer:hover::after{
+    transform: rotate(135deg);
+}
+.dropdownContainer:hover::before{
+    transform: rotate(-135deg);
+}
+.dropdownMenu{
+    height: auto;
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    width: 100%;
+}
+.option{
+    overflow: hidden;
+    cursor: pointer;
+    background-color: var(--light-gray-color);
+    height: 0;
+    width: 0;
+    transition: height 0.3s, background-color 0.3s;
+}
+.option:hover{
+    background-color: var(--main-color);
+    color: var(--black-color);
 }

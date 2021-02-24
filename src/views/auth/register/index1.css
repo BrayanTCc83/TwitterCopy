@@ -1,0 +1,68 @@
+#register-view{
+    position: absolute;
+    width: calc(50% - 4px );
+    height: calc(80% - 4px );
+    background-color: var(--white-color);
+    border: 2px solid var(--gray-color);
+    border-radius: 20px;
+    top: 10%;
+    left: 25%;
+
+    display: grid;
+    grid-gap: 10px;
+    padding: 20px;
+    grid-template: repeat(9, 52px) / repeat(4,1fr) ;
+    grid-template-areas: 
+        ". . . nextButton"
+        "create create create create"
+        "registerUser registerUser registerUser registerUser"
+        "registerPhone registerPhone registerPhone registerPhone"
+        "registerUserEmail registerUserEmail registerUserEmail registerUserEmail"
+        "registerDate registerDate registerDate registerDate"
+        "registerInfo registerInfo registerInfo registerInfo"
+        "registerMonth registerMonth registerDay registerYear";
+    overflow: auto;
+}
+#register-view #twitterIcon{
+    left: 19%;
+}
+#register-create{
+    margin: 10px 0;
+    grid-area: create;
+}
+#register-next{
+    grid-area: nextButton;
+}
+#register-user, #register-user+span{
+    grid-area: registerUser;
+}
+#register-phone, #register-phone+span{
+    grid-area: registerPhone;
+}
+#register-useEmail{
+    grid-area: registerUserEmail;
+}
+#register-date{
+    grid-area: registerDate;
+}
+#register-info{
+    grid-area: registerInfo;
+}
+#register-month{
+    grid-area: registerMonth;
+}
+#register-day{
+    grid-area: registerDay;
+}
+#register-year{
+    grid-area: registerYear;
+}
+#register-month+span, #register-day+span, #register-year+span{
+    grid-area: registerMonth;
+}
+#register-day+span{
+    grid-column: 3;
+}
+#register-year+span{
+    grid-column: 4;
+}

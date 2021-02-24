@@ -1,11 +1,9 @@
 import React, {useState} from 'react'
-import useLocalStorage from "../../hooks/localstorage"
 const DisplayConfiguration=({localDisplayConfiguation, setDisplayConfiguration, toggleDisplayConfiguration, updateDisplay})=>{
     const setValue=(e)=>{
         let localDisplayConfigCopy=localDisplayConfiguation
         localDisplayConfigCopy[e.target.name]=e.target.value
         setDisplayConfiguration(localDisplayConfigCopy)
-        console.log(localDisplayConfiguation)
     }
     return(
         <div id="displayConfiguration">

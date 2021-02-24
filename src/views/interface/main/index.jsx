@@ -55,7 +55,6 @@ const MainPage=()=>{
                         <span>Retweet</span>
                         <i className="loveIcon"></i>
                         <span>Like</span>
-                        
                         <i className="uploadIcon"></i>
                     </div>
                 </article>

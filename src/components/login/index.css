@@ -1,0 +1,95 @@
+#log-in{
+    display: grid;
+}
+.checkContent{
+    background-color: transparent;
+    border-radius: 5px;
+    color: var(--main-color) !important;
+    outline: none;
+    border: 2px solid var(--gray-color);
+}
+.checkContent:focus,.checkContent:hover{
+    border-color: var(--main-color);
+}
+#log-user{
+    grid-area: logUser;
+}
+#log-password{
+    grid-area: logPassword;
+}
+#log-submit{
+    grid-area: logSubmit;
+}
+#log-redirect{
+    grid-area: logRedirect;
+    display: block;
+    text-align: center;
+}
+#log-in span{
+    color: var(--main-color) !important;
+}
+.mainIcon{
+    margin: 15% !important;
+    width: 70% !important;
+    height: 70% !important;
+}
+.mainIcon:hover{
+    background-color: transparent !important;
+}
+.mainIcon::after{
+    background-color: var(--white-color) !important;
+}
+@media (min-width:1000px){
+    #log-in{
+        height: 40%;
+        max-width: 300px;
+        margin: auto;
+        grid-gap: 10px;
+        padding: 10px;
+        grid-template: repeat(5, 1fr) / 1fr ;
+        grid-template-areas: 
+            "logUser"
+            "logPassword" 
+            "logSubmit"
+            "logRedirect";
+        position: relative;
+    }
+    span{
+        position: absolute;
+        margin: 10px;
+        display: block;
+        font-size: 1.2em;
+        transition: font-size 0.3s;
+    }
+    form>span:nth-of-type(1){
+        grid-row: 1;
+    }
+    form>span:nth-of-type(2){
+        grid-row: 2;
+    }
+    #landing span{
+        grid-row: 1 !important;
+    }
+    #landing span:nth-of-type(1){
+        grid-column: 1;
+    }
+    #landing span:nth-of-type(2){
+        grid-column: 3;
+    }
+    #landing #log-in{
+        height: 75px !important;
+        max-width: 100% !important;
+        grid-template: 1fr 16px/ repeat(5, 1fr) !important;
+        grid-template-areas: 
+            "logUser logUser logPassword logPassword logSubmit"
+            ". . logRedirect logRedirect ." !important;
+    }
+    .checkContent{
+        padding: 20px 0 0 10px;
+        font-size: 1em;
+    }
+    .checkContent:hover+span,.checkContent:focus+span,.haveContent+span{
+        color: var(--main-color);
+        font-size: 0.5em;
+    }
+}
